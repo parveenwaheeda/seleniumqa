@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [CBTSuite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="safaritest(failed)">
+    <parameter name="browsername" value="safari"/>
+    <classes>
+      <class name="com.testscenarios.Toyota">
+        <methods>
+          <include name="f"/>
+          <include name="browser"/>
+        </methods>
+      </class> <!-- com.testscenarios.Toyota -->
+    </classes>
+  </test> <!-- safaritest(failed) -->
+</suite> <!-- Failed suite [CBTSuite] -->
