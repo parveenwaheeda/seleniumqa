@@ -6,7 +6,7 @@ import java.util.Properties;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import com.objectrepository.Locators1;
+import com.objectrepository.Locators;
 import com.utilities.WrapperClass;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -16,7 +16,7 @@ public class Jrisignup extends WrapperClass{
 	public static void main(String[] args) throws InterruptedException, IOException {
 		
 		
-	   	Locators1 loc1 =new Locators1();
+	   	Locators loc1 =new Locators();
 		WebDriverManager.chromedriver().setup();
          driver = new ChromeDriver();
 		 Properties prop = new Properties();
@@ -29,11 +29,6 @@ public class Jrisignup extends WrapperClass{
 		 sendKeysByAnyLocator(loc1.Justrechargeit_signup_password_Editbox,prop.getProperty("Password"));
 		 driver.findElement(loc1.Justrechargeit_signup_Checkbox).click();
 		 driver.findElement(loc1.Justrechargeit_signup_Button).click();
-		 
-		 
-		
-		 
-		 
 		 
 		 
 		}

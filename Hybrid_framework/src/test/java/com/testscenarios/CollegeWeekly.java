@@ -11,7 +11,6 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class CollegeWeekly {
 
 	public static void main(String[] args) throws InterruptedException {
-		// TODO Auto-generated method stub
 		WebDriver driver;
   		WebDriverManager.chromedriver().setup();
   		driver = new ChromeDriver();

@@ -14,6 +14,7 @@ public class BlazeDemo {
 		WebDriver driver;
   		WebDriverManager.chromedriver().setup();
   		driver = new ChromeDriver();
+  		
   	//	WebDriverManager.safari().setup();
   	//	driver = new ChromeDriver();
   		

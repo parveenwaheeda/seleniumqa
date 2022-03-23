@@ -1,11 +1,16 @@
 package com.utilities;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -19,8 +24,9 @@ import org.openqa.selenium.support.ui.Select;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class CommonFunctions {
+import java.text.DateFormat;
 
+public class CommonFunctions {
 	public static WebDriver driver;
 
 	public void chromeBrowserLaunch() {
@@ -33,7 +39,7 @@ public class CommonFunctions {
 
 	public void firefoxBrowserLaunch() {
 		WebDriverManager.firefoxdriver().setup();
-		driver = new FirefoxDriver();//abc
+		driver = new FirefoxDriver();// abc
 		driver.manage().window().maximize();
 	}
 
@@ -62,7 +68,7 @@ public class CommonFunctions {
 	}
 
 	/** sendkeys by any locators for Editbox/Textbox *********/
-	public void sendKeyByAnyLocator(By locator, String testdata) {
+	public static void sendKeyByAnyLocator(By locator, String testdata) {
 		WebElement ele = driver.findElement(locator);
 		if (ele.isDisplayed()) {
 			if (ele.isEnabled()) {
@@ -77,6 +83,7 @@ public class CommonFunctions {
 	}
 
 	/************ click on any webelement *************/
+
 	public void clickByAnylocator(By locator) {
 		WebElement ele = driver.findElement(locator);
 		if (ele.isDisplayed() && ele.isEnabled()) {
@@ -85,13 +92,12 @@ public class CommonFunctions {
 			System.out.println("The given locator is not displayed on DOM or not in enabled state****");
 		}
 	}
-	
 
 	/****************** Dropdown selection **************************************/
 
-	public void selectByVisibleText(By locater, String visibleText) {
+	public void selectByVisibleText(By locator, String visibleText) {
 
-		WebElement element = driver.findElement(locater);
+		WebElement element = driver.findElement(locator);
 		if (element.isDisplayed()) {
 			if (element.isEnabled()) {
 				Select dropdown = new Select(element);
@@ -104,7 +110,22 @@ public class CommonFunctions {
 		}
 
 	}
-	
-	
 
+//	/*****************
+//	 * read data from excel sheet
+//	 * 
+//	 * @throws IOException
+//	 *********************/
+//	public void readdata(String email,String password)  throws IOException {
+//		FileInputStream fi = new FileInputStream("./src/test/resources/TestData/td1.xlsx");
+//		
+//		Workbook wb = new XSSFWorkbook(fi);
+//		Sheet s = wb.getSheet("sheetname");
+//		Row r = s.getRow(1);
+//		Cell c = r.getCell(0);
+//		String email1 = c.toString();
+//		Cell c1 = r.getCell(1);
+//		String password1 = c1.toString();
+//
+//	}
 }
