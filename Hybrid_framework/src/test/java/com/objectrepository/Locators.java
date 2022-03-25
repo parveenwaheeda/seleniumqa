@@ -25,6 +25,22 @@ public class Locators {
 	
 	
 	
+	//AppleVacations
+	public final By apple_email=By.name("ctl01$ContentPlaceHolder$account$txtEmail");
+	public final By apple_phone=By.name("ctl01$ContentPlaceHolder$account$txtPhone");
+	public final By apple_password=By.name("ctl01$ContentPlaceHolder$account$txtPassword");
+	public final By apple_confirm=By.name("ctl01$ContentPlaceHolder$account$ConfirmPassword");
+	public final By apple_first=By.name("ctl01$ContentPlaceHolder$account$txtFirstName");
+	public final By apple_last=By.name("ctl01$ContentPlaceHolder$account$txtLastName");
+	public final By apple_address=By.name("ctl01$ContentPlaceHolder$account$txtAddress1");
+	public final By apple_aptno=By.name("ctl01$ContentPlaceHolder$account$txtApartmentNumber");
+	public final By apple_city=By.name("ctl01$ContentPlaceHolder$account$txtCity");
+	public final By apple_state=By.name("ctl01$ContentPlaceHolder$account$txtState");
+	public final By apple_postal=By.name("ctl01$ContentPlaceHolder$account$txtPostal");
+	public final By apple_securityquestion=By.name("ctl01$ContentPlaceHolder$account$drpdwnSecurityQuestion");
+	public final By apple_securityanswer=By.name("ctl01$ContentPlaceHolder$account$txtSecurityAnswer");
+	public final By apple_createaccount=By.name("ctl01$ContentPlaceHolder$account$BtnCreate");
+	
 	
 	
 
