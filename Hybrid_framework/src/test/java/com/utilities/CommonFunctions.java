@@ -4,7 +4,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.Set;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -128,4 +130,80 @@ public class CommonFunctions {
 //		String password1 = c1.toString();
 //
 //	}
+
+/************
+ * popupHandle
+ * 
+ * @throws InterruptedException
+ *********************************/
+public void popupHandleToCloseTheChildWindow() throws InterruptedException {
+	// get the main windown name
+	String mainWindowName = driver.getWindowHandle();
+	System.out.println("mainWindowName:" + mainWindowName);
+
+	Set<String> allWindowNames = driver.getWindowHandles();
+	System.out.println("allWindowNames:" + allWindowNames);
+
+	// Close the child window (popups)
+	for (String abc : allWindowNames) {// 2
+		// validate the window name is parent window /Child window?
+		if (!mainWindowName.equals(abc)) {
+			// switch to child window
+			driver.switchTo().window(abc);
+			Thread.sleep(3000);
+			// Close my child window
+			driver.close();
+		}
+	}
+	// move cursor point to back to mainwindow
+	driver.switchTo().window(mainWindowName);
+}
+
+public void navigateToPopupWindow() throws InterruptedException {
+	// get the main windown name
+	String mainWindowName = driver.getWindowHandle();
+	System.out.println("mainWindowName:" + mainWindowName);
+
+	Set<String> allWindowNames = driver.getWindowHandles();// 4
+	System.out.println("allWindowNames:" + allWindowNames);
+
+	// Close the child window (popups)
+	// for (int i = 0; i < array.length; i++) { }
+	for (String string : allWindowNames) {
+		// validate the window name is parent window /Child window?
+		if (!mainWindowName.equals(string)) {
+			// switch to child window
+			driver.switchTo().window(string);
+			Thread.sleep(3000);
+		}
+	}
+
+}
+
+/*********** SwithchToWindow using Tab ***************************/
+public void switchToNewTab() {
+	// Get the current window handle
+	String windowHandle = driver.getWindowHandle();// abc
+
+	ArrayList<String> allTabs = new ArrayList<String>(driver.getWindowHandles());
+	driver.switchTo().window(allTabs.get(1));
+
+	// Switch back to original window
+	// driver.switchTo().window(windowHandle);
+}
+
+/***********
+ * SwithchToWindow using Tab then close the New Tab againg back to Parent Window
+ ***************************/
+public void switchAndCloseNewTab() {
+	// Get the current window handle
+	String parentWindow = driver.getWindowHandle();
+	ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
+	driver.switchTo().window(tabs2.get(1));
+	// Close the newly Opened Window
+	driver.close();
+	// Switch back to original window
+	driver.switchTo().window(parentWindow);
+}
+
 }

@@ -2,16 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-03-24T23:30:06 EDT" name="Default suite" finished-at="2022-03-24T23:32:46 EDT" duration-ms="159366">
+  <suite started-at="2022-04-07T15:38:01 EDT" name="Default suite" finished-at="2022-04-07T15:38:03 EDT" duration-ms="1178">
     <groups>
     </groups>
-    <test started-at="2022-03-24T23:30:06 EDT" name="Default test" finished-at="2022-03-24T23:32:46 EDT" duration-ms="159366">
-      <class name="com.testscenarios.ApppleVacation">
-        <test-method signature="f()[pri:0, instance:com.testscenarios.ApppleVacation@618425b5]" started-at="2022-03-24T23:30:06 EDT" name="f" finished-at="2022-03-24T23:32:46 EDT" duration-ms="159243" status="PASS">
+    <test started-at="2022-04-07T15:38:01 EDT" name="Default test" finished-at="2022-04-07T15:38:03 EDT" duration-ms="1178">
+      <class name="com.testscenarios.SeleniumDataBaseTesting">
+        <test-method is-config="true" signature="connectingToDatabase()[pri:0, instance:com.testscenarios.SeleniumDataBaseTesting@23c30a20]" started-at="2022-04-07T15:38:01 EDT" name="connectingToDatabase" finished-at="2022-04-07T15:38:02 EDT" duration-ms="989" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- f -->
-      </class> <!-- com.testscenarios.ApppleVacation -->
+        </test-method> <!-- connectingToDatabase -->
+        <test-method signature="getDataFromDataBase()[pri:0, instance:com.testscenarios.SeleniumDataBaseTesting@23c30a20]" started-at="2022-04-07T15:38:02 EDT" name="getDataFromDataBase" finished-at="2022-04-07T15:38:03 EDT" duration-ms="134" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getDataFromDataBase -->
+        <test-method is-config="true" signature="closingDatabaseConnection()[pri:0, instance:com.testscenarios.SeleniumDataBaseTesting@23c30a20]" started-at="2022-04-07T15:38:03 EDT" name="closingDatabaseConnection" finished-at="2022-04-07T15:38:03 EDT" duration-ms="6" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closingDatabaseConnection -->
+      </class> <!-- com.testscenarios.SeleniumDataBaseTesting -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
